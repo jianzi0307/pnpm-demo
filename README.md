@@ -9,3 +9,9 @@
 - pnpm -w i
 - pnpm install uuid -S -r --filter @alanojs/tools
 - pnpm install typescript -D -w
+
+# npm 发布包
+
+- npm login
+- npm version patch
+- npm publish --access public
