@@ -9,6 +9,7 @@
 - pnpm -w i
 - pnpm install uuid -S -r --filter @alanojs/tools
 - pnpm install typescript -D -w
+- pnpm up -r --filter @alanojs/web
 
 # npm 发布包
 

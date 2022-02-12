@@ -9,13 +9,13 @@
     "build:prod": "vite build --mode prod"
   },
   "dependencies": {
-    "@alanojs/tools": "workspace:^1.0.0",
+    "@alanojs/tools": "workspace:^0.0.4",
     "vue": "^2.6.14",
-    "vue-router": "^3.5.1",
+    "vue-router": "^3.5.3",
     "vue-template-compiler": "^2.6.14"
   },
   "devDependencies": {
-    "vite": "^2.8.0",
+    "vite": "^2.8.1",
     "vite-plugin-vue2": "^1.9.3"
   }
 }
