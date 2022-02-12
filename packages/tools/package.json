@@ -1,9 +1,16 @@
 {
-  "name": "@jz/tools",
-  "version": "1.0.0",
+  "name": "@alanojs/tools",
+  "version": "0.0.4",
   "type": "module",
   "main": "index.js",
+  "author": "jianzi0307@gmail.com",
   "dependencies": {
     "uuid": "^8.3.2"
-  }
+  },
+  "keywords": [
+    "utils",
+    "library",
+    "lib"
+  ],
+  "license": "MIT"
 }

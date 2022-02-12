@@ -42,18 +42,32 @@ function substr(str, start, length) {
 
 /**
  * 连字符转驼峰
+ * @param {string} str
+ * @return {string}
  */
-const camelizeRE = /-(\w)/g;
 function camelize(str) {
-  return str.replace(camelizeRE, (_, c) => c.toUpperCase());
+  return str.replace(/-(\w)/g, (_, c) => c.toUpperCase());
+}
+/**
+ * 驼峰转连字符
+ * @param {string} str
+ * @return {string}
+ */
+function hyphenize(str) {
+  const toStr =
+    str &&
+    str.replace(/([a-z])([A-Z])/g, function (_, g1, g2) {
+      return g1 + "-" + g2;
+    });
+  return toStr && toStr.toLowerCase();
 }
 
 /**
- * 获取UUID
+ * 生成UUID
  * @param {boolean} noDash 是否去除短横线
  * @return {string}
  */
-function getUuid(noDash = true) {
+function genUuid(noDash = true) {
   let uuid = uuidv4();
   if (noDash) {
     uuid = uuid.replace(new RegExp("-", "g"), "");
@@ -61,4 +75,36 @@ function getUuid(noDash = true) {
   return uuid.toLocaleLowerCase();
 }
 
-export { trim, substr, camelize, getUuid };
+/**
+ * 货币表示法 10000.00 -> 10,000.00
+ * @param {number} money 
+ * @return {string}
+ */
+function formatMoney(money) {
+  if (money && money != null) {
+    money = String(money);
+    var left = money.split(".")[0],
+      right = money.split(".")[1];
+    right = right
+      ? right.length >= 2
+        ? "." + right.substr(0, 2)
+        : "." + right + "0"
+      : ".00";
+    var temp = left
+      .split("")
+      .reverse()
+      .join("")
+      .match(/(\d{1,3})/g);
+    return (
+      (Number(money) < 0 ? "-" : "") +
+      temp.join(",").split("").reverse().join("") +
+      right
+    );
+  } else if (money === 0) {
+    return "0.00";
+  } else {
+    return "";
+  }
+}
+
+export { trim, substr, camelize, hyphenize, genUuid, formatMoney };

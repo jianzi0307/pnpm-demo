@@ -4,7 +4,7 @@ import { default as router } from "./router";
 
 import App from "./App.vue";
 
-import { timerManager } from "@jz/tools";
+import { timerManager } from "@alanojs/tools";
 
 Vue.use(timerManager);
 

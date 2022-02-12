@@ -3,10 +3,10 @@ class WsClient {
     const {
       wsUrl = "",
       callbackMap = {
-        onMessage: () => {},
-        onOpen: () => {},
-        onError: () => {},
-        onClose: () => {},
+        onMessage: () => { },
+        onOpen: () => { },
+        onError: () => { },
+        onClose: () => { },
       },
     } = options;
     this._wsUrl = wsUrl;
@@ -80,21 +80,21 @@ class WsClient {
   handleError(err) {
     console.log("---websockt error ---", err);
     this.reconnect();
-    const { onError } = this?._callbackMap;
+    const { onError } = this._callbackMap;
     typeof onError == "function" && onError(err);
   }
 
   handleMessage(evt) {
     console.log("---websockt message---", evt);
     this.resetHeartbeat();
-    const { onMessage } = this?._callbackMap;
+    const { onMessage } = this._callbackMap;
     typeof onMessage == "function" && onMessage(evt.data);
   }
 
   handleClose() {
     console.log("---websockt close ---");
     this.reconnect();
-    const { onClose } = this?._callbackMap;
+    const { onClose } = this._callbackMap;
     typeof onClose == "function" && onClose();
   }
 

@@ -4,6 +4,6 @@
   "type": "module",
   "main": "index.js",
   "dependencies": {
-    "@jz/tools": "workspace:^1.0.0"
+    "@alanojs/tools": "workspace:^1.0.0"
   }
 }

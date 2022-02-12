@@ -100,10 +100,28 @@ const deepClone = function (obj, hash = new WeakMap()) {
   return cloneObj;
 };
 
+/**
+ * 复制到粘贴板
+ * @param {string} content
+ */
+function copy(content) {
+  let transfer = document.createElement("input");
+  document.body.appendChild(transfer);
+  transfer.value = content;
+  transfer.focus();
+  transfer.select();
+  if (document.execCommand("copy")) {
+    document.execCommand("copy");
+  }
+  transfer.blur();
+  document.body.removeChild(transfer);
+}
+
 export * from "./string";
+export * from "./color";
 export * from "./array";
 export * from "./math";
 export * from "./object";
 export * from "./uri";
 
-export { handlePromise, isEmpty, isDef, isObj, deepClone };
+export { handlePromise, isEmpty, isDef, isObj, deepClone, copy };

@@ -1,8 +1,11 @@
 class StorageUtil {
-  /*
+  /**
    * 存储localStorage
-   * */
-  static setStore = (name, content) => {
+   * @param {*} name 
+   * @param {*} content 
+   * @returns 
+   */
+  static setStore(name, content) {
     if (!name || !content || !window.localStorage) {
       return;
     }
@@ -10,12 +13,14 @@ class StorageUtil {
       content = JSON.stringify(content);
     }
     window.localStorage.setItem(name, content);
-  };
+  }
 
-  /*
+  /**
    * 获取localStorage
-   * */
-  static getStore = (name) => {
+   * @param {*} name 
+   * @returns 
+   */
+  static getStore(name) {
     if (!name || !window.localStorage) {
       return;
     }
@@ -28,32 +33,35 @@ class StorageUtil {
       }
     }
     return value;
-  };
+  }
 
-  /*
+  /**
    * 删除localStorage
-   * */
-  static removeStore = (name) => {
+   * @param {*} name 
+   * @returns 
+   */
+  static removeStore(name) {
     if (!name || !window.localStorage) {
       return;
     }
     window.localStorage.removeItem(name);
-  };
+  }
 
-  /*
+  /**
    * 清空localStorage
-   * */
-  static clearStore = () => {
+   * @returns 
+   */
+  static clearStore() {
     if (!window.localStorage) {
       return;
     }
     window.localStorage.clear();
-  };
+  }
 
-  /*
+  /** 
    * 存储sessionStorage
-   * */
-  static setSession = (name, content) => {
+   */
+  static setSession(name, content) {
     if (!name || !content || !window.sessionStorage) {
       return;
     }
@@ -61,12 +69,12 @@ class StorageUtil {
       content = JSON.stringify(content);
     }
     window.sessionStorage.setItem(name, content);
-  };
+  }
 
-  /*
+  /** 
    * 获取sessionStorage
-   * */
-  static getSession = (name) => {
+   */
+  static getSession(name) {
     if (!name || !window.sessionStorage) {
       return;
     }
@@ -79,27 +87,27 @@ class StorageUtil {
       }
     }
     return value;
-  };
+  }
 
-  /*
+  /** 
    * 删除sessionStorage
-   * */
-  static removeSession = (name) => {
+   */
+  static removeSession(name) {
     if (!name || !window.sessionStorage) {
       return;
     }
     window.sessionStorage.removeItem(name);
-  };
+  }
 
-  /*
+  /** 
    * 清空sessionStorage
-   * */
-  static clearSession = () => {
+   */
+  static clearSession() {
     if (!window.sessionStorage) {
       return;
     }
     window.sessionStorage.clear();
-  };
+  }
 }
 
 export default StorageUtil;

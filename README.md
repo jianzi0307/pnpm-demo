@@ -1,9 +1,11 @@
 # pnpm monorepo demo
- - tools工具包
- - web包 vite + vue2.0
 
-# pnpm相关命令
- - pnpm -w clean
- - pnpm -w i
- - pnpm install uuid -S -r --filter @jz/tools
- - pnpm install typescript -D -w
+- tools 工具包
+- web 包 vite + vue2.0
+
+# pnpm 相关命令
+
+- pnpm -w clean
+- pnpm -w i
+- pnpm install uuid -S -r --filter @alanojs/tools
+- pnpm install typescript -D -w

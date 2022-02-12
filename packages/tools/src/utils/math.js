@@ -137,11 +137,94 @@ function ceil(n, decimals) {
 
 /**
  * 获取min～max之间的随机数
- * @param number min
- * @param number max
+ * @param {number} min 
+ * @param {number} max 
+ * @returns 
  */
-function randomNumber(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+function randomNumber(
+  min = Number.MIN_VALUE,
+  max = Number.MAX_VALUE
+) {
+  return min + Math.round(Math.random() * (max - min));
+}
+
+/**
+ * 区间映射
+ * 将[Omin，Omax]上每个数映射到区间[Nmin,Nmax]上。
+ * 映射算法思想：计算出N区间长度除以O区间长度，得出O区间上单位长度对应于N区间上的大小，
+ * 再将O区间上每个数减去O区间最小值后乘以单位区间对应的长度，最后加上N区间的最小值，
+ * 实现投射到N区间上
+ * @param {number} num 原区间from中的数
+ * @param {object} to 目标区间{min:Nmin,max:Nmax}
+ * @param {object} from 原区间{min:Omin,max:Omax} 
+ * @return {number}
+ */
+function rangeMap(num, to, from) {
+  from = from || { 'min': 1, 'max': 60 };
+  num = num < from['min'] ? from['min'] : num;
+  num = num > from['max'] ? from['max'] : num;
+  return ((to['max'] - to['min']) / (from['max'] - from['min'])) *
+    (num - from['min']) +
+    to['min'];
+}
+
+/**
+ * 区间映射（echarts中提取的线性映射）
+ * 将domain区间中的一个值映射到range区间
+ * 
+ * @param  {number} val domain区间中的一个值
+ * @param  {Array.<number>} domain 原区间
+ * @param  {Array.<number>} range 目标区间
+ * @param  {boolean} clamp 是否限制范围
+ * @return {(number}
+ */
+function linearMap(val, domain, range, clamp) {
+  var subDomain = domain[1] - domain[0];
+  var subRange = range[1] - range[0];
+
+  // hack
+  if (subDomain === 0 && domain[0] === 0) {
+    return range[0];
+  }
+
+  if (subDomain === 0) {
+    return subRange === 0
+      ? range[0]
+      : (range[0] + range[1]) / 2;
+  }
+
+  // Avoid accuracy problem in edge, such as
+  // 146.39 - 62.83 === 83.55999999999999.
+  // See echarts/test/ut/spec/util/number.js#linearMap#accuracyError
+  // It is a little verbose for efficiency considering this method
+  // is a hotspot.
+  if (clamp) {
+    if (subDomain > 0) {
+      if (val <= domain[0]) {
+        return range[0];
+      }
+      else if (val >= domain[1]) {
+        return range[1];
+      }
+    }
+    else {
+      if (val >= domain[0]) {
+        return range[0];
+      }
+      else if (val <= domain[1]) {
+        return range[1];
+      }
+    }
+  }
+  else {
+    if (val === domain[0]) {
+      return range[0];
+    }
+    if (val === domain[1]) {
+      return range[1];
+    }
+  }
+  return (val - domain[0]) / subDomain * subRange + range[0];
 }
 
 export {
@@ -157,4 +240,6 @@ export {
   floor,
   ceil,
   randomNumber,
+  rangeMap,
+  linearMap
 };

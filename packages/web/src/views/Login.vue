@@ -5,26 +5,28 @@
     <div>appendParams</div>
     <div>{{ msg }}</div>
 
-    <div><router-link to="/">Home</router-link></div>
+    <div>
+      <router-link to="/">Home</router-link>
+    </div>
   </div>
 </template>
 
 <script>
-import { appendParams } from "@jz/tools";
+import { appendParams } from '@alanojs/tools'
 
 export default {
-  name: "Login",
+  name: 'Login',
   data() {
     return {
-      msg: "",
-    };
+      msg: ''
+    }
   },
   mounted() {
-    this.msg = appendParams("http://www.baidu.com:8080/", {
+    this.msg = appendParams('http://www.baidu.com:8080/', {
       a: 1,
-      b: "hi",
-      c: ["bbb", "ddd"],
-    });
+      b: 'hi',
+      c: ['bbb', 'ddd']
+    })
 
     // console.log(UriUtil.getQueryString("a"), "<<< getQueryString");
 
@@ -34,12 +36,12 @@ export default {
     // );
 
     this.$createTimer(
-      "loginTimer",
+      'loginTimer',
       () => {
-        console.log("loginTimerloginTimerloginTimerloginTimerloginTimer");
+        console.log('loginTimerloginTimerloginTimerloginTimerloginTimer')
       },
       1000
-    );
-  },
-};
+    )
+  }
+}
 </script>
