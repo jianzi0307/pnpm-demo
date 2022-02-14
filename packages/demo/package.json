@@ -1,0 +1,26 @@
+{
+  "name": "openlayers-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "dev": "vite",
+    "build:testing": "vite build --mode testing",
+    "build:prod": "vite build --mode prod"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@alanojs/tools": "workspace:^0.0.4",
+    "ol": "6.9.0",
+    "ol-ext": "3.2.19",
+    "vue": "2.6.14",
+    "vue-router": "3.5.3",
+    "vue-template-compiler": "2.6.14"
+  },
+  "devDependencies": {
+    "vite": "2.8.1",
+    "vite-plugin-vue2": "1.9.3"
+  }
+}

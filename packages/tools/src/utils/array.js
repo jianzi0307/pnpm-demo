@@ -31,9 +31,9 @@ function arrayRange(start, end) {
 
 /**
  * 快速创建定长等值数组
- * @param {number} size 
- * @param {number} num 
- * @returns 
+ * @param {number} size
+ * @param {number} num
+ * @returns
  */
 function arrayFill(size, num = 0) {
   return new Array(size).fill(num);
@@ -41,7 +41,7 @@ function arrayFill(size, num = 0) {
 
 /**
  * 数组元素求和
- * @param {array} arr 
+ * @param {array} arr
  */
 function arraySum(arr) {
   return arr.reduce(function (prev, curr, idx, arr) {
@@ -49,4 +49,23 @@ function arraySum(arr) {
   });
 }
 
-export { arrayChunk, arrayRange, arrayFill, arraySum };
+/**
+ * 比较两个数组是否相等
+ * @param {array} arr1 数组1
+ * @param {array} arr2 数组2
+ * @return {boolean}
+ */
+function arrayEquals(arr1, arr2) {
+  const len1 = arr1.length;
+  if (len1 !== arr2.length) {
+    return false;
+  }
+  for (let i = 0; i < len1; i++) {
+    if (arr1[i] !== arr2[i]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+export { arrayChunk, arrayRange, arrayFill, arraySum, arrayEquals };
