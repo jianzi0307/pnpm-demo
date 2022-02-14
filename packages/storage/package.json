@@ -1,0 +1,17 @@
+{
+  "name": "@alanojs/storage",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "index.js",
+  "author": "jianzi0307@gmail.com",
+  "keywords": [
+    "adapter",
+    "cookie",
+    "localStorage",
+    "sessionStorage"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@alanojs/tools": "workspace:^0.0.4"
+  }
+}
