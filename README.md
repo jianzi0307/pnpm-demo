@@ -12,6 +12,7 @@
 - pnpm up -r --filter @alanojs/web
 - pnpm version patch
 - pnpm publish --no-git-checks --access public
+- pnpm unpublish --force
 
 # npm 发布包
 

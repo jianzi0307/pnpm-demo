@@ -1,6 +1,14 @@
 import axios from "axios";
 import router from "@/router/index.js";
 import Vue from "vue";
+/**
+ * 1. createInstance
+ * 2. apiUrl
+ * 3. interceptors
+ * 4. token
+ * 5. sessionStorage,localStorage,cookie
+ * 6.  
+ */
 
 const useHostName = process.env.VUE_APP_USE_HOSTNAME?.toLowerCase() === "true";
 const baseUrl = useHostName

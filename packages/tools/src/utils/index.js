@@ -1,4 +1,16 @@
 /**
+ * 抽象方法
+ * @return {?}
+ */
+export function abstract() {
+  return /** @type {?} */ (
+    (function () {
+      throw new Error('Unimplemented abstract method.');
+    })()
+  );
+}
+
+/**
  * promise异步处理简化，不用再使用trycatch处理异常情况
  *
  * 使用方法：

@@ -1,5 +1,9 @@
 import { default as TimerManager } from "./manager";
 
+/**
+ * Vue插件支持
+ * @param {*} Vue 
+ */
 const install = (Vue) => {
   // 注入定时器管理器
   Vue.prototype.$timerMgr = new TimerManager();
