@@ -10,6 +10,8 @@
 - pnpm install uuid -S -r --filter @alanojs/tools
 - pnpm install typescript -D -w
 - pnpm up -r --filter @alanojs/web
+- pnpm version patch
+- pnpm publish --no-git-checks --access public
 
 # npm 发布包
 

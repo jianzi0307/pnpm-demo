@@ -1,0 +1,19 @@
+{
+  "name": "@alanojs/cli",
+  "version": "0.0.2",
+  "description": "",
+  "bin": {
+    "alano": "index.js"
+  },
+  "scripts": {
+    "dev": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@alanojs/tools": "workspace:^0.0.4",
+    "commander": "^9.0.0"
+  }
+}
