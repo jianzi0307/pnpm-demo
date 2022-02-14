@@ -7,16 +7,11 @@ const install = (Vue) => {
   // 添加实例方法，可以创建一个随组件销毁的定时器
   Vue.prototype.$createTimer = function (
     key,
-    callback = () => {},
+    callback = () => { },
     interval = 1000,
     immediately = true
   ) {
-    const imInvokeFunc = () => {
-      callback();
-      return imInvokeFunc;
-    };
-    let func = immediately ? imInvokeFunc() : callback;
-    this.$timerMgr.addTimer(key, func, interval);
+    this.$timerMgr.addTimer(key, callback, interval, immediately);
     this.$once("hook:beforeDestroy", () => {
       this.$timerMgr.removeTimer(key);
     });

@@ -15,13 +15,19 @@ class TimerManager {
    * @param {string} key 
    * @param {Function} callback 回调
    * @param {number} delay 延迟时间（毫秒）
+   * @param {boolean} immediately 是否先执行，默认false
    */
-  addTimer(key, callback, delay) {
+  addTimer(key, callback, delay, immediately = false) {
     if (this._intervalIds.has(key)) {
       clearRequestInterval(this._intervalIds.get(key));
       this._intervalIds.delete(key);
     }
-    const timerId = setRequestInterval(callback, delay);
+    const imInvokeFunc = () => {
+      callback();
+      return imInvokeFunc;
+    };
+    const func = immediately ? imInvokeFunc() : callback;
+    const timerId = setRequestInterval(func, delay);
     this._intervalIds.set(key, timerId);
 
     console.log("[timerManager] addTimer -> ", key);
