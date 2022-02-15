@@ -6,8 +6,7 @@ import { StorageService, StorageAdapterType } from './src/storage';
  * @param {object} options { adapter: 'localStorage' }
  */
 const install = (Vue, options = { adapter: StorageAdapterType.LocalStorage }) => {
-  const ins = new StorageService()
-  Vue.prototype.$storage = ins.getAdapter(options.adapter);
+  Vue.prototype.$storage = StorageService.getAdapter(options.adapter);
 };
 
 export * from './src/storage'

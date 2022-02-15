@@ -12,8 +12,9 @@ class Storage {
    * 获取存储适配器
    * @param {string} adapterType
    * @return {?}
+   * @static
    */
-  getAdapter(adapterType) {
+  static getAdapter(adapterType) {
     let adapter;
     switch (adapterType) {
       case AdapterType.Cookie:
