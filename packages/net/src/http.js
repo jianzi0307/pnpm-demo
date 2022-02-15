@@ -1,7 +1,8 @@
 import axios from "axios";
 import { StorageService, StorageAdapterType } from "@alanojs/storage";
 
-const qs = require('qs')
+// const qs = require("qs");
+import qs from 'qs'
 
 class HttpClient {
   constructor(options = { gateWay: "localhost" }) {
@@ -13,21 +14,29 @@ class HttpClient {
       storageType = StorageAdapterType.LocalStorage,
       router = null,
       toast = null,
+      requestInterceptor = null,
+      responseInterceptor = null,
     } = opts;
     this._router = router;
     this._toast = toast;
-    this._storage = StorageService().getAdapter(storageType);
+    this._storage = StorageService.getAdapter(storageType);
     this._axios = axios.create({
-      baseUrl: gateWay,
+      baseURL: gateWay,
       withCredentials,
       timeout,
     });
-    this._axios.interceptors.request.use(this.requestInterceptor, (error) => {
-      return Promise.reject(error);
-    });
-    this._axios.interceptors.response.use(this.responseInterceptor, (error) => {
-      return Promise.reject(error);
-    });
+    this._axios.interceptors.request.use(
+      requestInterceptor || this.requestInterceptor.bind(this),
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+    this._axios.interceptors.response.use(
+      responseInterceptor || this.responseInterceptor.bind(this),
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
   }
 
   /**
@@ -75,6 +84,23 @@ class HttpClient {
       return Promise.reject(res.msg);
     }
     return res;
+  }
+
+  /**
+   * get 请求
+   * @param {string} url 请求地址，不含域名。
+   * @param {object} params 请求参数
+   */
+  get(url, params, options) {
+    return this._axios.get(
+      url,
+      {
+        params,
+      },
+      {
+        ...options,
+      }
+    );
   }
 
   /**
@@ -183,7 +209,7 @@ class HttpClient {
 export default {
   install(Vue, options) {
     Vue.prototype.$http = new HttpClient(options);
-  }
-}
+  },
+};
 
 export { HttpClient };

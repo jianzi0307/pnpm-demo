@@ -10,17 +10,17 @@ const routes = [
   {
     path: "/",
     name: "Index",
-    component: () => import("@/views/Index.vue"), 
+    component: () => import("@/views/Index.vue"),
   },
   {
     path: "/login",
     name: "Login",
-    component: () => import("@/views/Login.vue"), 
+    component: () => import("@/views/Login.vue"),
   },
 ];
 
 const router = new VueRouter({
-  mode: "hash",
+  mode: "history",
   base: VITE_BASE_URL,
   routes: routes,
 });

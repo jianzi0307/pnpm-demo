@@ -19,6 +19,11 @@ export default {
       'testTimer',
       () => {
         console.log(this.$storage.getItem('cccccc'))
+
+        this.$http
+          .get('login')
+          .then(res => console.log(res))
+          .catch(err => console.log(err))
       },
       1000,
       true
