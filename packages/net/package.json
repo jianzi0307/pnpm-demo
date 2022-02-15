@@ -1,6 +1,6 @@
 {
   "name": "@alanojs/net",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "main": "index.js",
   "author": "jianzi0307@gmail.com",
@@ -9,6 +9,14 @@
     "http",
     "axios"
   ],
+  "scripts": {
+    "publish:patch": "pnpm version patch && pnpm publish --no-git-check",
+    "publish-test": "pnpm publish --dry-run --no-git-check"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "license": "MIT",
   "dependencies": {
     "@alanojs/storage": "workspace:^0.0.1",
