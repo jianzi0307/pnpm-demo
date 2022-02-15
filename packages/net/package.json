@@ -1,0 +1,19 @@
+{
+  "name": "@alanojs/net",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "index.js",
+  "author": "jianzi0307@gmail.com",
+  "keywords": [
+    "websocket",
+    "http",
+    "axios"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@alanojs/storage": "workspace:^0.0.1",
+    "@alanojs/tools": "workspace:^0.0.4",
+    "axios": "^0.26.0",
+    "qs": "^6.10.3"
+  }
+}
