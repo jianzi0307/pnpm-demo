@@ -5,7 +5,7 @@
 export function abstract() {
   return /** @type {?} */ (
     (function () {
-      throw new Error('Unimplemented abstract method.');
+      throw new Error("Unimplemented abstract method.");
     })()
   );
 }
@@ -132,31 +132,31 @@ function copy(content) {
 /**
  * 日志打点,GET方式
  * 绝大多数浏览器会延迟卸载以保证图片的载入，所以数据可以在卸载事件中发送。
- * @param {string} url 
- * @param {object} data 
+ * @param {string} url
+ * @param {object} data
  */
 function reportDataGet(url, data) {
-  let img = document.createElement('img')
-  const params = []
-  Object.keys(data).forEach(key => {
-    params.push(`${key}=${encodeURIComponent(data[key])}`)
-  })
-  img.onload = () => (img = null)
-  img.src = `${url}?${params.join('&')}`
+  let img = document.createElement("img");
+  const params = [];
+  Object.keys(data).forEach((key) => {
+    params.push(`${key}=${encodeURIComponent(data[key])}`);
+  });
+  img.onload = () => (img = null);
+  img.src = `${url}?${params.join("&")}`;
 }
 
 /**
  * 日志打点,POST方式
  * 利用navigator.sendBeacon
- * @param {string} url 
+ * @param {string} url
  * @param {object} data
  */
 function reportDataPost(url, data) {
-  if ('sendBeacon' in navigator) {
+  if ("sendBeacon" in navigator) {
     navigator.sendBeacon(url, data);
   } else {
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', url, false);
+    xhr.open("POST", url, false);
     xhr.send(data);
   }
 }
@@ -167,5 +167,15 @@ export * from "./array";
 export * from "./math";
 export * from "./object";
 export * from "./uri";
+export * from "./image";
 
-export { handlePromise, isEmpty, isDef, isObj, deepClone, copy, reportDataGet, reportDataPost };
+export {
+  handlePromise,
+  isEmpty,
+  isDef,
+  isObj,
+  deepClone,
+  copy,
+  reportDataGet,
+  reportDataPost,
+};
