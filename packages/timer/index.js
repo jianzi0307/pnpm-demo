@@ -22,7 +22,7 @@ const install = (Vue) => {
   };
 };
 
-export * from "./src/timerManager/timer";
+export * from "./src/timer";
 export { TimerManager };
 
 export default {

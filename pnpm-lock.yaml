@@ -63,6 +63,9 @@ importers:
     dependencies:
       '@alanojs/tools': link:../tools
 
+  packages/timer:
+    specifiers: {}
+
   packages/tools:
     specifiers:
       uuid: ^8.3.2
@@ -71,8 +74,9 @@ importers:
 
   packages/web:
     specifiers:
-      '@alanojs/net': workspace:^0.0.1
+      '@alanojs/net': workspace:^0.0.2
       '@alanojs/storage': workspace:^0.0.1
+      '@alanojs/timer': workspace:^0.0.0
       '@alanojs/tools': workspace:^0.0.4
       vite: ^2.8.1
       vite-plugin-vue2: ^1.9.3
@@ -82,6 +86,7 @@ importers:
     dependencies:
       '@alanojs/net': link:../net
       '@alanojs/storage': link:../storage
+      '@alanojs/timer': link:../timer
       '@alanojs/tools': link:../tools
       vue: 2.6.14
       vue-router: 3.5.3

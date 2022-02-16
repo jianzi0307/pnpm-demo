@@ -9,21 +9,20 @@
 export default {
   name: 'Index',
   mounted() {
+    // timerMgr.doOnce()
     this.$timerMgr.doOnce(() => {
-      console.log('测试111')
+      console.log('timerMgr.doOnce()')
     }, 1000)
-    console.log(this.$storage, '<<<<<')
-    this.$storage.setItem('cccccc', 'cookie expire test', 5000)
-
-    this.$timerMgr.addTimer(
+    
+    this.$storage.setItem('storageKey', 'cookie 过期测试', 5000)
+    this.$createTimer(
       'testTimer',
       () => {
-        console.log(this.$storage.getItem('cccccc'))
-
-        this.$http
-          .get('login')
-          .then(res => console.log(res))
-          .catch(err => console.log(err))
+        console.log(this.$storage.getItem('storageKey'))
+        // this.$http
+        //   .get('login')
+        //   .then(res => console.log(res))
+        //   .catch(err => console.log(err))
       },
       1000,
       true
