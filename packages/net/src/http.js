@@ -82,8 +82,11 @@ class HttpClient {
       }
       return Promise.reject(res.msg);
     }
-    console.log(res, "<<<<<<res");
-    return res;
+    return res?.data ?? res;
+  }
+
+  request(options) {
+    return this._axios.request(options);
   }
 
   /**
@@ -92,15 +95,21 @@ class HttpClient {
    * @param {object} params 请求参数
    */
   get(url, params, options) {
-    return this._axios.get(
+    return this.request({
       url,
-      {
-        params,
-      },
-      {
-        ...options,
-      }
-    );
+      params,
+      method: "get",
+      ...options,
+    });
+    // return this._axios.get(
+    //   url,
+    //   {
+    //     params,
+    //   },
+    //   {
+    //     ...options,
+    //   }
+    // );
   }
 
   /**
@@ -113,11 +122,17 @@ class HttpClient {
    * @param {boolean} serialize 是否使用qs.stringify序列化
    */
   post(url, params, config = null, serialize = true) {
-    return this._axios.post(
+    return this.request({
       url,
-      serialize ? qs.stringify(params) : params,
-      config
-    );
+      method: "post",
+      data: serialize ? qs.stringify(params) : params,
+      ...config,
+    });
+    // return this._axios.post(
+    //   url,
+    //   serialize ? qs.stringify(params) : params,
+    //   config
+    // );
   }
 
   /**
@@ -129,12 +144,21 @@ class HttpClient {
    * @param {object} options axios配置项
    */
   postJson(url, params, options = null) {
-    return this._axios.post(url, params, {
+    return this.request({
       headers: {
         "content-type": "application/json;charset=UTF-8",
       },
+      url,
+      method: "post",
+      data: params,
       ...options,
     });
+    // return this._axios.post(url, params, {
+    //   headers: {
+    //     "content-type": "application/json;charset=UTF-8",
+    //   },
+    //   ...options,
+    // });
   }
 
   /**
@@ -152,13 +176,23 @@ class HttpClient {
         formData.append(key, params[key]);
       }
     }
-    return this._axios.post(url, formData, {
+    return this.request({
+      url,
+      method: "post",
+      data: formData,
       headers: {
         "content-type": "multipart/form-data",
       },
       timeout: 3600000,
       ...options,
     });
+    // return this._axios.post(url, formData, {
+    //   headers: {
+    //     "content-type": "multipart/form-data",
+    //   },
+    //   timeout: 3600000,
+    //   ...options,
+    // });
   }
 
   /**
@@ -168,11 +202,17 @@ class HttpClient {
    * @param {boolean} serialize 是否使用qs.stringify序列化
    */
   put(url, params, config = null, serialize = true) {
-    return this._axios.put(
+    return this.request({
       url,
-      serialize ? qs.stringify(params) : params,
-      config
-    );
+      method: "put",
+      data: serialize ? qs.stringify(params) : params,
+      ...config,
+    });
+    // return this._axios.put(
+    //   url,
+    //   serialize ? qs.stringify(params) : params,
+    //   config
+    // );
   }
 
   /**
@@ -184,12 +224,21 @@ class HttpClient {
    * @param {object} options axios配置项
    */
   putJson(url, params, options = null) {
-    return this._axios.put(url, params, {
+    return this.request({
+      url,
+      method: "put",
       headers: {
         "content-type": "application/json;charset=UTF-8",
       },
+      data: params,
       ...options,
     });
+    // return this._axios.put(url, params, {
+    //   headers: {
+    //     "content-type": "application/json;charset=UTF-8",
+    //   },
+    //   ...options,
+    // });
   }
 
   /**
@@ -198,7 +247,12 @@ class HttpClient {
    * @param {object} config 配置
    */
   del(url, config = null) {
-    return this._axios.delete(url, config);
+    return this.request({
+      url,
+      method: "delete",
+      ...config,
+    });
+    // return this._axios.delete(url, config);
   }
 
   static createInstance(options) {
