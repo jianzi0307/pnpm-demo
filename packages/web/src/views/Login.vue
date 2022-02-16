@@ -16,21 +16,21 @@
 </template>
 
 <script>
-import { appendParams } from '@alanojs/tools'
+import { appendParams } from "@alanojs/tools";
 
 export default {
-  name: 'Login',
+  name: "Login",
   data() {
     return {
-      msg: ''
-    }
+      msg: "",
+    };
   },
   mounted() {
-    this.msg = appendParams('http://www.baidu.com:8080/', {
+    this.msg = appendParams("http://localhost:7003/beacon", {
       a: 1,
-      b: 'hi',
-      c: ['bbb', 'ddd']
-    })
+      b: "hi",
+      c: ["bbb", "ddd"],
+    });
 
     // console.log(UriUtil.getQueryString("a"), "<<< getQueryString");
 
@@ -49,38 +49,38 @@ export default {
   },
   methods: {
     reportData1(url, data) {
-      let img = document.createElement('img')
-      const params = []
-      Object.keys(data).forEach(key => {
-        params.push(`${key}=${encodeURIComponent(data[key])}`)
-      })
-      img.onload = () => (img = null)
-      img.src = `${url}?${params.join('&')}`
+      let img = document.createElement("img");
+      const params = [];
+      Object.keys(data).forEach((key) => {
+        params.push(`${key}=${encodeURIComponent(data[key])}`);
+      });
+      img.onload = () => (img = null);
+      img.src = `${url}?${params.join("&")}`;
     },
     reportData(url, data) {
-      const formData = new FormData()
-      Object.keys(data).forEach(key => {
-        let value = data[key]
-        if (typeof value !== 'string') {
-          // formData只能append string 或 Blob
-          value = JSON.stringify(value)
-        }
-        formData.append(key, value)
-      })
-      navigator.sendBeacon(url, formData)
+      // const formData = new FormData();
+      // Object.keys(data).forEach((key) => {
+      //   let value = data[key];
+      //   if (typeof value !== "string") {
+      //     // formData只能append string 或 Blob
+      //     value = JSON.stringify(value);
+      //   }
+      //   formData.append(key, value);
+      // });
+      navigator.sendBeacon(url, JSON.stringify(data));
     },
     handleClick(e) {
-      console.log(e, '<<<<e')
-      const url = 'http://localhost:8080/dig'
+      console.log(e, "<<<<e");
+      const url = "http://localhost:7003/beacon";
       const data = {
         test: 100,
         t: new Date().getTime(),
-        na: 'asfasfd',
-        r: Math.random()
-      }
-      this.reportData(url, data)
+        na: "asfasfd",
+        r: Math.random(),
+      };
+      this.reportData(url, data);
       // navigator.sendBeacon(url, JSON.stringify(data))
-    }
-  }
-}
+    },
+  },
+};
 </script>
