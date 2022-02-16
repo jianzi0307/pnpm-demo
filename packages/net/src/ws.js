@@ -1,4 +1,5 @@
 const noop = () => null;
+
 class WsClient {
   constructor(options = {}) {
     const {

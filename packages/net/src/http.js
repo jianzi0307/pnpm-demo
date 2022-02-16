@@ -1,8 +1,7 @@
 import axios from "axios";
 import { StorageService, StorageAdapterType } from "@alanojs/storage";
 
-// const qs = require("qs");
-import qs from 'qs'
+import qs from "qs";
 
 class HttpClient {
   constructor(options = { gateWay: "localhost" }) {
@@ -83,6 +82,7 @@ class HttpClient {
       }
       return Promise.reject(res.msg);
     }
+    console.log(res, "<<<<<<res");
     return res;
   }
 

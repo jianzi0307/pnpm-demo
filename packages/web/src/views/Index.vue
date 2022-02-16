@@ -2,6 +2,9 @@
   <div>
     <h1>Home</h1>
     <router-link to="/login">Login</router-link>
+    <div>
+      <button @click="handleClick">发请求</button>
+    </div>
   </div>
 </template>
 
@@ -24,12 +27,16 @@ export default {
       1000,
       true
     );
-
-    // net
-    this.$http
-      .get("login")
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+  },
+  methods: {
+    async handleClick() {
+      const [error, res] = await this.$http.get("restaurants");
+      if (error) {
+        console.log(error);
+        return;
+      }
+      console.log(res, "响应结果");
+    },
   },
 };
 </script>
