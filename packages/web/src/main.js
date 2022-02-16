@@ -6,7 +6,6 @@ import request from "@/utils/http";
 
 import TimerManager from "@alanojs/timer";
 import Storage, { StorageAdapterType } from "@alanojs/storage";
-// import { StorageService, StorageAdapterType } from '@alanojs/storage';
 
 Vue.use(TimerManager);
 Vue.use(Storage, { adapter: StorageAdapterType.Cookie });

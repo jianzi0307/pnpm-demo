@@ -3,7 +3,10 @@
     <h1>Home</h1>
     <router-link to="/login">Login</router-link>
     <div>
-      <button @click="handleClick">发请求</button>
+      <button @click="handleGet">GET</button>
+      <button @click="handlePost">POST</button>
+      <button @click="handlePut">PUT</button>
+      <button @click="handleDelete">DELETE</button>
     </div>
   </div>
 </template>
@@ -29,13 +32,37 @@ export default {
     );
   },
   methods: {
-    async handleClick() {
-      const [error, res] = await this.$http.get("restaurants");
+    async handleGet() {
+      const [error, res] = await this.$http.get("geoJson");
       if (error) {
         console.log(error);
         return;
       }
-      console.log(res, "响应结果");
+      console.log(res, "<<<get响应结果");
+    },
+    async handlePost() {
+      const [error, res] = await this.$http.post("geoJson", { a: 2 });
+      if (error) {
+        console.log(error);
+        return;
+      }
+      console.log(res, "<<<post响应结果");
+    },
+    async handlePut() {
+      const [error, res] = await this.$http.put("geoJson", { a: 1 });
+      if (error) {
+        console.log(error);
+        return;
+      }
+      console.log(res, "<<<put响应结果");
+    },
+    async handleDelete() {
+      const [error, res] = await this.$http.del("geoJson");
+      if (error) {
+        console.log(error);
+        return;
+      }
+      console.log(res, "<<<delete响应结果");
     },
   },
 };

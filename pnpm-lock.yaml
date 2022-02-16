@@ -68,8 +68,10 @@ importers:
 
   packages/tools:
     specifiers:
+      exif-js: ^2.3.0
       uuid: ^8.3.2
     dependencies:
+      exif-js: 2.3.0
       uuid: 8.3.2
 
   packages/web:
@@ -981,6 +983,10 @@ packages:
   /estree-walker/2.0.2:
     resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}
     dev: true
+
+  /exif-js/2.3.0:
+    resolution: {integrity: sha1-nRCBm/Vx+HOBPnZAJBJVq5zhqBQ=}
+    dev: false
 
   /fill-range/7.0.1:
     resolution: {integrity: sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl/djYSu2OdQ2Pa302N4oqkSg9ir6jaLWJ2USVpQ==}
