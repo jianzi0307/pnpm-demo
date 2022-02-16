@@ -10,6 +10,14 @@
     "localStorage",
     "sessionStorage"
   ],
+  "scripts": {
+    "publish:patch": "pnpm version patch && pnpm publish --no-git-check",
+    "publish-test": "pnpm publish --dry-run --no-git-check"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "license": "MIT",
   "dependencies": {
     "@alanojs/tools": "workspace:^0.0.4"
