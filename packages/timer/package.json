@@ -1,6 +1,6 @@
 {
   "name": "@alanojs/timer",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "type": "module",
   "main": "index.js",
   "author": "jianzi0307@gmail.com",
@@ -19,5 +19,8 @@
     "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@alanojs/tools": "workspace:^0.0.5"
+  }
 }

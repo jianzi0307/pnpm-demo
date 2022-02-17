@@ -1,20 +1,9 @@
 import Vue from "vue";
-
-import { default as router } from "./router";
-import request from '@/utils/http';
-
 import App from "./App.vue";
+import router from "./router";
+import plugins from "./plugin";
 
-import { timerManager } from "@alanojs/tools";
-
-import Storage, { StorageAdapterType } from '@alanojs/storage';
-Vue.use(Storage, { adapter: StorageAdapterType.Cookie })
-
-Vue.prototype.$http = request;
-
-// import { StorageService, StorageAdapterType } from '@alanojs/storage';
-
-Vue.use(timerManager);
+Vue.use(plugins);
 
 new Vue({
   router,

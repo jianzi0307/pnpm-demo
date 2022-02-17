@@ -12,4 +12,12 @@ class Request extends HttpClient {
   }
 }
 
-export default new Request();
+const request = new Request();
+
+export { request }
+
+export default {
+  install: (Vue, options) => {
+    Vue.prototype.$http = request;
+  }
+}

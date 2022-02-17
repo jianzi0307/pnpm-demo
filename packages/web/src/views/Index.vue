@@ -25,9 +25,12 @@ export default {
           .then(res => console.log(res))
           .catch(err => console.log(err))
       },
-      1000,
+      5000,
       true
     )
+    this.$doTask(() => {
+      console.log('doTask doTask')
+    }, 1000)
   }
 }
 </script>

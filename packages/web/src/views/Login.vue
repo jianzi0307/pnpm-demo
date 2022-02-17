@@ -39,13 +39,9 @@ export default {
     //   "<<<<<<<<<<<<<<<<<< getUrlParams"
     // );
 
-    this.$createTimer(
-      'loginTimer',
-      () => {
-        console.log('loginTimerloginTimerloginTimerloginTimerloginTimer')
-      },
-      1000
-    )
+    this.$doTask(() => {
+      console.log('loginTimerloginTimerloginTimerloginTimerloginTimer')
+    }, 1000)
   },
   methods: {
     reportData1(url, data) {
