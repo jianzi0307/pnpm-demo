@@ -1,13 +1,7 @@
 <template>
-  <div>
+  <div class="index">
     <h1>Home</h1>
     <router-link to="/login">Login</router-link>
-    <div>
-      <button @click="handleGet">GET</button>
-      <button @click="handlePost">POST</button>
-      <button @click="handlePut">PUT</button>
-      <button @click="handleDelete">DELETE</button>
-    </div>
   </div>
 </template>
 
@@ -22,17 +16,22 @@ export default {
 
     // storage
     this.$storage.setItem("storageKey", "cookie 过期测试", 5000);
-    this.$createTimer(
-      "testTimer",
+    this.$doTask(
       () => {
         console.log(this.$storage.getItem("storageKey"));
       },
       5000,
       true
-    )
+    );
     this.$doTask(() => {
-      console.log('doTask doTask')
-    }, 1000)
-  }
-}
+      console.log("doTask doTask");
+    }, 1000);
+  },
+};
 </script>
+
+<style lang="scss" scoped>
+.index {
+  font-size: 18px;
+}
+</style>
