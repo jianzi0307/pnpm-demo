@@ -27,43 +27,12 @@ export default {
       () => {
         console.log(this.$storage.getItem("storageKey"));
       },
-      1000,
+      5000,
       true
-    );
-  },
-  methods: {
-    async handleGet() {
-      const [error, res] = await this.$http.get("geoJson");
-      if (error) {
-        console.log(error);
-        return;
-      }
-      console.log(res, "<<<get响应结果");
-    },
-    async handlePost() {
-      const [error, res] = await this.$http.post("geoJson", { a: 2 });
-      if (error) {
-        console.log(error);
-        return;
-      }
-      console.log(res, "<<<post响应结果");
-    },
-    async handlePut() {
-      const [error, res] = await this.$http.put("geoJson", { a: 1 });
-      if (error) {
-        console.log(error);
-        return;
-      }
-      console.log(res, "<<<put响应结果");
-    },
-    async handleDelete() {
-      const [error, res] = await this.$http.del("geoJson");
-      if (error) {
-        console.log(error);
-        return;
-      }
-      console.log(res, "<<<delete响应结果");
-    },
-  },
-};
+    )
+    this.$doTask(() => {
+      console.log('doTask doTask')
+    }, 1000)
+  }
+}
 </script>

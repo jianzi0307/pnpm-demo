@@ -11,8 +11,43 @@ class TimerManager {
   }
 
   /**
+   * 创建一个分组
+   * @param {string} groupId 分组ID
+   * @param {number} delay 延时
+   */
+  createTimerGroup(groupId, delay) {
+    const groupKey = `${groupId}-group`;
+    const timerId = setRequestInterval(() => {
+      const hasCallbacks = this._callbacks.has(groupKey);
+      if (!hasCallbacks) {
+        this._callbacks.set(groupKey, []);
+      }
+      const callbacks = this._callbacks.get(groupKey);
+      callbacks.forEach((cb) => {
+        cb();
+      });
+    }, delay);
+    this._intervalIds.set(groupId, timerId);
+  }
+
+  /**
+   * 将回调函数添加到组
+   * @param {*} groupId
+   * @param {*} callback
+   * @returns
+   */
+  addToGroup(groupId, callback) {
+    const groupKey = `${groupId}-group`;
+    if (!this._callbacks.has(groupKey)) {
+      return;
+    }
+    const callbacks = this._callbacks.get(groupKey);
+    callbacks.push(callback);
+  }
+
+  /**
    * 添加timer
-   * @param {string} key 
+   * @param {string} key
    * @param {Function} callback 回调
    * @param {number} delay 延迟时间（毫秒）
    * @param {boolean} immediately 是否先执行，默认false
@@ -35,7 +70,7 @@ class TimerManager {
 
   /**
    * 移除timer
-   * @param {string} key 
+   * @param {string} key
    */
   removeTimer(key) {
     if (!this._intervalIds.has(key)) return;
