@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@alanojs/net": "workspace:^0.0.7",
-    "@alanojs/storage": "workspace:^0.0.1",
+    "@alanojs/storage": "workspace:^0.0.2",
     "@alanojs/timer": "workspace:^0.0.2",
     "@alanojs/tools": "workspace:^0.0.5",
     "vue": "^2.6.14",

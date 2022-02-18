@@ -10,7 +10,7 @@ importers:
 
   packages/cli:
     specifiers:
-      '@alanojs/tools': workspace:^0.0.4
+      '@alanojs/tools': workspace:^0.0.5
       commander: ^9.0.0
     dependencies:
       '@alanojs/tools': link:../tools
@@ -18,7 +18,7 @@ importers:
 
   packages/demo:
     specifiers:
-      '@alanojs/tools': workspace:^0.0.4
+      '@alanojs/tools': workspace:^0.0.5
       ol: 6.9.0
       ol-ext: 3.2.19
       sass: ^1.49.7
@@ -41,13 +41,13 @@ importers:
 
   packages/logger:
     specifiers:
-      '@alanojs/tools': workspace:^0.0.4
+      '@alanojs/tools': workspace:^0.0.5
     dependencies:
       '@alanojs/tools': link:../tools
 
   packages/net:
     specifiers:
-      '@alanojs/storage': workspace:^0.0.1
+      '@alanojs/storage': workspace:^0.0.2
       '@alanojs/tools': workspace:^0.0.5
       axios: ^0.26.0
       qs: ^6.10.3
@@ -69,9 +69,6 @@ importers:
     dependencies:
       '@alanojs/tools': link:../tools
 
-  packages/timer:
-    specifiers: {}
-
   packages/tools:
     specifiers:
       exif-js: ^2.3.0
@@ -83,9 +80,9 @@ importers:
   packages/web:
     specifiers:
       '@alanojs/net': workspace:^0.0.7
-      '@alanojs/storage': workspace:^0.0.1
+      '@alanojs/storage': workspace:^0.0.2
       '@alanojs/timer': workspace:^0.0.2
-      '@alanojs/tools': workspace:^0.0.4
+      '@alanojs/tools': workspace:^0.0.5
       vite: ^2.8.1
       vite-plugin-vue2: ^1.9.3
       vue: ^2.6.14

@@ -1,10 +1,6 @@
 {
   "name": "@alanojs/timer",
-<<<<<<< HEAD
-  "version": "0.0.1",
-=======
   "version": "0.0.2",
->>>>>>> 5cf06a5165741cf5de36b1d77a49fd832d238e7d
   "type": "module",
   "main": "index.js",
   "author": "jianzi0307@gmail.com",
