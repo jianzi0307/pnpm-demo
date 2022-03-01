@@ -19,8 +19,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@alanojs/storage": "workspace:^0.0.2",
-    "@alanojs/tools": "workspace:^0.0.7",
+    "@alanojs/storage": "workspace:^0.0.3",
+    "@alanojs/tools": "workspace:^0.0.8",
     "axios": "^0.26.0",
     "qs": "^6.10.3"
   }

@@ -10,13 +10,11 @@ importers:
 
   packages/cli:
     specifiers:
-      '@alanojs/tools': workspace:^0.0.7
       commander: ^9.0.0
       download-git-repo: ^3.0.2
       glob: ^7.2.0
       terminal-kit: ^2.4.0
     dependencies:
-      '@alanojs/tools': link:../tools
       commander: registry.npmmirror.com/commander/9.0.0
       download-git-repo: registry.npmmirror.com/download-git-repo/3.0.2
       glob: registry.npmmirror.com/glob/7.2.0
@@ -54,9 +52,9 @@ importers:
   packages/mobile:
     specifiers:
       '@alanojs/net': workspace:^0.0.7
-      '@alanojs/storage': workspace:^0.0.2
+      '@alanojs/storage': workspace:^0.0.3
       '@alanojs/timer': workspace:^0.0.3
-      '@alanojs/tools': workspace:^0.0.7
+      '@alanojs/tools': workspace:^0.0.8
       postcss-px-to-viewport: ^1.1.1
       vite: ^2.8.5
       vite-plugin-vue2: ^1.9.3
@@ -78,8 +76,8 @@ importers:
 
   packages/net:
     specifiers:
-      '@alanojs/storage': workspace:^0.0.2
-      '@alanojs/tools': workspace:^0.0.7
+      '@alanojs/storage': workspace:^0.0.3
+      '@alanojs/tools': workspace:^0.0.8
       axios: ^0.26.0
       qs: ^6.10.3
     dependencies:
@@ -90,13 +88,13 @@ importers:
 
   packages/storage:
     specifiers:
-      '@alanojs/tools': workspace:^0.0.7
+      '@alanojs/tools': workspace:^0.0.8
     dependencies:
       '@alanojs/tools': link:../tools
 
   packages/timer:
     specifiers:
-      '@alanojs/tools': workspace:^0.0.7
+      '@alanojs/tools': workspace:^0.0.8
     dependencies:
       '@alanojs/tools': link:../tools
 
@@ -113,7 +111,7 @@ importers:
       '@alanojs/net': workspace:^0.0.7
       '@alanojs/storage': workspace:^0.0.2
       '@alanojs/timer': workspace:^0.0.3
-      '@alanojs/tools': workspace:^0.0.7
+      '@alanojs/tools': workspace:^0.0.8
       vite: ^2.8.5
       vite-plugin-vue2: ^1.9.3
       vue: ^2.6.14
@@ -877,7 +875,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: registry.npmmirror.com/caniuse-lite/1.0.30001312
-      electron-to-chromium: registry.npmmirror.com/electron-to-chromium/1.4.74
+      electron-to-chromium: registry.npmmirror.com/electron-to-chromium/1.4.75
       escalade: registry.npmmirror.com/escalade/3.1.1
       node-releases: registry.npmmirror.com/node-releases/2.0.2
       picocolors: registry.npmmirror.com/picocolors/1.0.0
@@ -1262,10 +1260,10 @@ packages:
     version: 0.1.4
     dev: false
 
-  registry.npmmirror.com/electron-to-chromium/1.4.74:
-    resolution: {integrity: sha512-DvQ20M0I4dIH8KcAo7n7E4OEeNafZ1N8z6g6ck+ALCM0ZoV6mpjaX6ekjs31zKlqPzacU3lmjG9PZEa1mQhEpQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/electron-to-chromium/-/electron-to-chromium-1.4.74.tgz}
+  registry.npmmirror.com/electron-to-chromium/1.4.75:
+    resolution: {integrity: sha512-LxgUNeu3BVU7sXaKjUDD9xivocQLxFtq6wgERrutdY/yIOps3ODOZExK1jg8DTEg4U8TUCb5MLGeWFOYuxjF3Q==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/electron-to-chromium/-/electron-to-chromium-1.4.75.tgz}
     name: electron-to-chromium
-    version: 1.4.74
+    version: 1.4.75
     dev: true
 
   registry.npmmirror.com/end-of-stream/1.4.4:

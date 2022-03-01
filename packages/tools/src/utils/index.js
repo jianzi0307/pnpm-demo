@@ -2,7 +2,7 @@
  * 抽象方法
  * @return {?}
  */
-export function abstract() {
+function abstract() {
   return /** @type {?} */ (
     (function () {
       throw new Error("Unimplemented abstract method.");
@@ -170,6 +170,7 @@ export * from "./uri";
 export * from "./image";
 
 export {
+  abstract,
   handlePromise,
   isEmpty,
   isDef,
