@@ -33,5 +33,7 @@ export default {
 <style lang="scss" scoped>
 .index {
   font-size: 18px;
+  width: 1920px;
+  height: 1080px;
 }
 </style>

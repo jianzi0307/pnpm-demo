@@ -25,12 +25,3 @@ export default ({ command, mode }) => {
     },
   });
 };
-
-// export default {
-//   plugins: [createVuePlugin()],
-//   resolve: {
-//     alias: {
-//       "@": "./src",
-//     },
-//   },
-// };

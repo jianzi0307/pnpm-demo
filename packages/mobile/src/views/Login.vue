@@ -1,16 +1,18 @@
 <template>
-  <div>
-    <h1>Login</h1>
+  <div class="login">
+    <div class="login-box">
+      <h1>Login</h1>
 
-    <div>appendParams</div>
-    <div>{{ msg }}</div>
+      <div>appendParams</div>
+      <div>{{ msg }}</div>
 
-    <div>
-      <router-link to="/">Home</router-link>
-    </div>
+      <div>
+        <router-link to="/">Home</router-link>
+      </div>
 
-    <div>
-      <div @click="handleClick">gif打点测试</div>
+      <div>
+        <div @click="handleClick">gif打点测试</div>
+      </div>
     </div>
   </div>
 </template>
@@ -40,8 +42,8 @@ export default {
     // );
 
     this.$doTask(() => {
-      console.log('loginTimerloginTimerloginTimerloginTimerloginTimer')
-    }, 1000)
+      console.log("loginTimerloginTimerloginTimerloginTimerloginTimer");
+    }, 1000);
   },
   methods: {
     reportData1(url, data) {
@@ -80,3 +82,24 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.login {
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+  color: white;
+  height: 100%;
+  
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  &-box {
+    background-color: #121212;
+    padding: 20px;
+    height: 200px;
+    width: 400px;
+    font-size: 18px !important;
+  }
+}
+</style>
