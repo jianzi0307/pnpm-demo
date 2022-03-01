@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf node_modules **/*/node_modules",
+    "upall": "pnpm up -r --filter @alanojs/tools & pnpm up -r --filter @alanojs/storage & pnpm up -r --filter @alanojs/net & pnpm up -r --filter @alanojs/timer & pnpm up -r --filter @alanojs/mobile & pnpm up -r --filter @alanojs/web & pnpm up -r --filter @alanojs/demo",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

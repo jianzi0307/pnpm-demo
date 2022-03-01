@@ -9,7 +9,7 @@
     "build:prod": "vite build --mode prod"
   },
   "dependencies": {
-    "@alanojs/net": "workspace:^0.0.7",
+    "@alanojs/net": "workspace:^0.0.8",
     "@alanojs/storage": "workspace:^0.0.3",
     "@alanojs/timer": "workspace:^0.0.3",
     "@alanojs/tools": "workspace:^0.0.8",
