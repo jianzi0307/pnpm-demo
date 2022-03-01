@@ -22,17 +22,30 @@ export default {
 
     // storage
     this.$storage.setItem("storageKey", "cookie 过期测试", 5000);
-    this.$createTimer(
-      "testTimer",
-      () => {
-        console.log(this.$storage.getItem("storageKey"));
-      },
-      5000,
-      true
-    )
-    this.$doTask(() => {
-      console.log('doTask doTask')
-    }, 1000)
-  }
-}
+    // this.$doTask(
+    //   () => {
+    //     console.log(this.$storage.getItem("storageKey"));
+    //   },
+    //   5000,
+    //   true
+    // );
+    // this.$doTask(() => {
+    //   console.log("doTask doTask");
+    // }, 1000);
+  },
+  methods: {
+    handleGet() {
+      this.$http.get("/");
+    },
+    handlePut() {
+      console.log("......................");
+    },
+    handlePost() {
+      console.log("......................");
+    },
+    handleDelete() {
+      console.log("......................");
+    },
+  },
+};
 </script>

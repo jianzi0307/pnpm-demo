@@ -1,4 +1,4 @@
-import http from "@/utils/http";
+import http from "@/plugins/http";
 
 export function login(params) {
   return http.post("/login", params);
