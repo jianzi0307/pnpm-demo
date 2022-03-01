@@ -1,19 +1,26 @@
 {
   "name": "@alanojs/cli",
-  "version": "0.0.2",
-  "description": "",
+  "version": "0.0.5",
+  "description": "alano cli.",
   "bin": {
-    "alano": "index.js"
+    "alano": "./bin/alano.js"
   },
   "scripts": {
-    "dev": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node ./bin/alano.js",
+    "publish-test": "pnpm publish --dry-run --no-git-check",
+    "publish:patch": "pnpm version patch && pnpm publish --no-git-check"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "alano",
+    "cli",
+    "commander"
+  ],
+  "author": "jianzi0307@gmail.com",
+  "license": "MIT",
   "dependencies": {
-    "@alanojs/tools": "workspace:^0.0.5",
-    "commander": "^9.0.0"
+    "commander": "^9.0.0",
+    "download-git-repo": "^3.0.2",
+    "glob": "^7.2.0",
+    "terminal-kit": "^2.4.0"
   }
 }
