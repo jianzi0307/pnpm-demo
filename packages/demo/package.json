@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@alanojs/tools": "workspace:^0.0.9",
+    "@alanojs/tools": "workspace:^0.0.10",
     "ol": "6.9.0",
     "ol-ext": "3.2.19",
     "vue": "2.6.14",

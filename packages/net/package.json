@@ -1,6 +1,6 @@
 {
   "name": "@alanojs/net",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "type": "module",
   "main": "index.js",
   "author": "jianzi0307@gmail.com",
@@ -19,8 +19,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@alanojs/storage": "workspace:^0.0.4",
-    "@alanojs/tools": "workspace:^0.0.9",
+    "@alanojs/storage": "workspace:^0.0.5",
+    "@alanojs/tools": "workspace:^0.0.10",
     "axios": "^0.26.0",
     "qs": "^6.10.3"
   }
