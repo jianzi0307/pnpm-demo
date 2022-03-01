@@ -1,6 +1,6 @@
 {
   "name": "@alanojs/storage",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "main": "index.js",
   "author": "jianzi0307@gmail.com",
@@ -20,6 +20,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@alanojs/tools": "workspace:^0.0.8"
+    "@alanojs/tools": "workspace:^0.0.9"
   }
 }

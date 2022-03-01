@@ -22,7 +22,7 @@ importers:
 
   packages/demo:
     specifiers:
-      '@alanojs/tools': workspace:^0.0.8
+      '@alanojs/tools': workspace:^0.0.9
       ol: 6.9.0
       ol-ext: 3.2.19
       sass: ^1.49.9
@@ -46,9 +46,9 @@ importers:
   packages/mobile:
     specifiers:
       '@alanojs/net': workspace:^0.0.8
-      '@alanojs/storage': workspace:^0.0.3
+      '@alanojs/storage': workspace:^0.0.4
       '@alanojs/timer': workspace:^0.0.3
-      '@alanojs/tools': workspace:^0.0.8
+      '@alanojs/tools': workspace:^0.0.9
       postcss-px-to-viewport: ^1.1.1
       vite: ^2.8.5
       vite-plugin-vue2: ^1.9.3
@@ -70,8 +70,8 @@ importers:
 
   packages/net:
     specifiers:
-      '@alanojs/storage': workspace:^0.0.3
-      '@alanojs/tools': workspace:^0.0.8
+      '@alanojs/storage': workspace:^0.0.4
+      '@alanojs/tools': workspace:^0.0.9
       axios: ^0.26.0
       qs: ^6.10.3
     dependencies:
@@ -82,13 +82,13 @@ importers:
 
   packages/storage:
     specifiers:
-      '@alanojs/tools': workspace:^0.0.8
+      '@alanojs/tools': workspace:^0.0.9
     dependencies:
       '@alanojs/tools': link:../tools
 
   packages/timer:
     specifiers:
-      '@alanojs/tools': workspace:^0.0.8
+      '@alanojs/tools': workspace:^0.0.9
     dependencies:
       '@alanojs/tools': link:../tools
 
@@ -103,9 +103,9 @@ importers:
   packages/web:
     specifiers:
       '@alanojs/net': workspace:^0.0.8
-      '@alanojs/storage': workspace:^0.0.3
+      '@alanojs/storage': workspace:^0.0.4
       '@alanojs/timer': workspace:^0.0.3
-      '@alanojs/tools': workspace:^0.0.8
+      '@alanojs/tools': workspace:^0.0.9
       vite: ^2.8.5
       vite-plugin-vue2: ^1.9.3
       vue: ^2.6.14
