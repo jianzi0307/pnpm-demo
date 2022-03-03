@@ -5,7 +5,10 @@ const packageJson = require("../package.json");
 const { Command } = require("commander");
 const program = new Command();
 
-const { create } = require("../lib");
+const { list, create } = require("../lib");
+
+// alano list
+program.command("list").description("show templates").action(list);
 
 // alano create <project-name>
 program
