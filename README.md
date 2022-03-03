@@ -13,6 +13,7 @@
 - pnpm version patch
 - pnpm publish --no-git-checks --access public
 - pnpm unpublish --force
+- pnpm up -r
 
 # npm 发布包
 
