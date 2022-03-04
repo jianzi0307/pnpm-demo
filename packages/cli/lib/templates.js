@@ -5,6 +5,11 @@ const templates = [
     repo: "github:jianzi0307/vue2-vite-template",
   },
   {
+    name: "vue2-webpack-template",
+    desc: "vue2 + webpack",
+    repo: "github:jianzi0307/vue2-webpack-template",
+  },
+  {
     name: "vue3-vite-template",
     desc: "vue3 + vite + jsx",
     repo: "github:jianzi0307/vue3-vite-template",
