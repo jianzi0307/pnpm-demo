@@ -82,7 +82,7 @@ class HttpClient {
       }
       return Promise.reject(res.msg);
     }
-    return res?.data ?? res;
+    return res.data || res;
   }
 
   request(options) {
