@@ -1,6 +1,6 @@
 {
   "name": "@alanojs/timer",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "main": "index.js",
   "author": "jianzi0307@gmail.com",
@@ -21,6 +21,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@alanojs/tools": "workspace:^0.0.10"
+    "@alanojs/tools": "workspace:^0.0.11"
   }
 }

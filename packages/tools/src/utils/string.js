@@ -1,4 +1,5 @@
-const { v4: uuidv4 } = require('uuid');
+const { nanoid } = require('nanoid')
+ 
 
 /**
  * 去除前后空白字符
@@ -66,15 +67,15 @@ function hyphenize(str) {
 
 /**
  * 生成UUID
- * @param {boolean} noDash 是否去除短横线
  * @return {string}
  */
-function genUuid(noDash = true) {
-  let uuid = uuidv4();
-  if (noDash) {
-    uuid = uuid.replace(new RegExp("-", "g"), "");
-  }
-  return uuid.toLocaleLowerCase();
+function genUuid() {
+  // let uuid = nanoid();
+  // if (noDash) {
+  //   uuid = uuid.replace(new RegExp("-", "g"), "");
+  // }
+  // return uuid.toLocaleLowerCase();
+  return nanoid();
 }
 
 /**
