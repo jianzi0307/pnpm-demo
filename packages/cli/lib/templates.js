@@ -10,15 +10,30 @@ const templates = [
     repo: "github:jianzi0307/vue2-webpack-template",
   },
   {
-    name: "vue3-vite-template",
-    desc: "vue3 + vite + jsx",
-    repo: "github:jianzi0307/vue3-vite-template",
+    name: "vue-admin-element-template",
+    desc: "vue2 + element-ui",
+    repo: "github:PanJiaChen/vue-admin-template",
   },
   {
-    name: "react-vite-template",
-    desc: "react + vite",
-    repo: "github:jianzi0307/react-vite-template",
+    name: "vue-admin-element-template(ts)",
+    desc: "vue2 + element-ui + typescript",
+    repo: "github:Armour/vue-typescript-admin-template",
   },
+  {
+    name: "vue-admin-antd-template",
+    desc: "vue2 + antdv",
+    repo: "github:vueComponent/ant-design-vue-pro"
+  },
+  {
+    name: "qiankun-monorepo",
+    desc: "monorepomonorepo & micro frontend.",
+    repo: "github:jianzi0307/qiankun-monorepo",
+  },
+  {
+    name: "webpack-muti-page",
+    desc: "webpack + jquery + ejs",
+    repo: "github:jianzi0307/webpack-muti-page"
+  }
 ];
 
 module.exports = { templates };
