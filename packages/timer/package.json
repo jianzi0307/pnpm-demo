@@ -21,6 +21,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@alanojs/tools": "workspace:^0.0.11"
+    "@alanojs/tools": "workspace:^0.0.13"
   }
 }
