@@ -1,12 +1,12 @@
 {
   "name": "@alanojs/tools",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "type": "module",
   "main": "index.js",
   "author": "jianzi0307@gmail.com",
   "dependencies": {
     "exif-js": "^2.3.0",
-    "nanoid": "^3.3.1",
+    "nanoid": "^3.3.4",
     "uuid": "^8.3.2"
   },
   "keywords": [

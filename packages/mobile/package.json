@@ -11,15 +11,15 @@
   "dependencies": {
     "@alanojs/net": "workspace:^0.0.10",
     "@alanojs/storage": "workspace:^0.0.5",
-    "@alanojs/timer": "workspace:^0.0.4",
+    "@alanojs/timer": "workspace:^0.0.5",
     "@alanojs/tools": "workspace:^0.0.11",
     "vue": "^2.6.14",
-    "vue-router": "^3.5.3",
+    "vue-router": "^3.5.4",
     "vue-template-compiler": "^2.6.14"
   },
   "devDependencies": {
     "postcss-px-to-viewport": "^1.1.1",
-    "vite": "^2.8.6",
+    "vite": "^2.9.9",
     "vite-plugin-vue2": "^1.9.3"
   }
 }

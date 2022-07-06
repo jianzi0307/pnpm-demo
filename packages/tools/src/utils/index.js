@@ -168,6 +168,7 @@ export * from "./math";
 export * from "./object";
 export * from "./uri";
 export * from "./image";
+export * from "./file"
 
 export {
   abstract,
