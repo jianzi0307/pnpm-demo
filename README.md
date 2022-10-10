@@ -21,12 +21,12 @@
 - npm version patch
 - npm publish --access public
 
-
 # @alano/cli 依赖包
+
 commander.js 命令行
 inquirer.js 交互
-colors.js  颜色
-download-git-repo 从git仓库拉代码
+colors.js 颜色
+download-git-repo 从 git 仓库拉代码
 chalk 颜色
 progress 进度条
-terminal-kit 
+terminal-kit
