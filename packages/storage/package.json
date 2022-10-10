@@ -20,6 +20,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@alanojs/tools": "workspace:^0.0.14"
+    "@alanojs/tools": "workspace:^0.0.15"
   }
 }

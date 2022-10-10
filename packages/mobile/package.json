@@ -12,7 +12,7 @@
     "@alanojs/net": "workspace:^0.0.10",
     "@alanojs/storage": "workspace:^0.0.5",
     "@alanojs/timer": "workspace:^0.0.5",
-    "@alanojs/tools": "workspace:^0.0.14",
+    "@alanojs/tools": "workspace:^0.0.15",
     "vue": "^2.7.10",
     "vue-router": "^3.6.5",
     "vue-template-compiler": "^2.7.10"
