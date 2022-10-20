@@ -1,5 +1,5 @@
-const { nanoid } = require('nanoid')
- 
+import { nanoid } from 'nanoid';
+
 
 /**
  * 去除前后空白字符
