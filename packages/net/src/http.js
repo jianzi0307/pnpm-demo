@@ -11,12 +11,10 @@ class HttpClient {
       withCredentials = false,
       timeout = 0,
       storageType = StorageAdapterType.LocalStorage,
-      router = null,
       toast = null,
       requestInterceptor = null,
       responseInterceptor = null,
     } = opts;
-    this._router = router;
     this._toast = toast;
     this._storage = StorageService.getAdapter(storageType);
     this._axios = axios.create({
@@ -47,6 +45,13 @@ class HttpClient {
   }
 
   /**
+   * 尚未登录
+   */
+  handle401() {
+    location.href = "/login";
+  }
+
+  /**
    * 请求拦截器
    * @param {object} config
    * @return
@@ -73,11 +78,7 @@ class HttpClient {
         if (this._toast) {
           this._toast.error("Token失效，请重新登录");
         }
-        if (!this._router) {
-          location.href = "/";
-        } else {
-          this._router.replace("/");
-        }
+        this.handle401();
         return res;
       }
       return Promise.reject(res.msg);
@@ -101,15 +102,6 @@ class HttpClient {
       method: "get",
       ...options,
     });
-    // return this._axios.get(
-    //   url,
-    //   {
-    //     params,
-    //   },
-    //   {
-    //     ...options,
-    //   }
-    // );
   }
 
   /**
@@ -118,21 +110,16 @@ class HttpClient {
    *
    * @param {string} url 请求地址，不含域名
    * @param {object} params 请求参数
-   * @param {object} config axios配置项
+   * @param {object} options axios配置项
    * @param {boolean} serialize 是否使用qs.stringify序列化
    */
-  post(url, params, config = null, serialize = true) {
+  post(url, params, options = null, serialize = true) {
     return this.request({
       url,
       method: "post",
       data: serialize ? qs.stringify(params) : params,
-      ...config,
+      ...options,
     });
-    // return this._axios.post(
-    //   url,
-    //   serialize ? qs.stringify(params) : params,
-    //   config
-    // );
   }
 
   /**
@@ -153,12 +140,6 @@ class HttpClient {
       data: params,
       ...options,
     });
-    // return this._axios.post(url, params, {
-    //   headers: {
-    //     "content-type": "application/json;charset=UTF-8",
-    //   },
-    //   ...options,
-    // });
   }
 
   /**
@@ -186,13 +167,6 @@ class HttpClient {
       timeout: 3600000,
       ...options,
     });
-    // return this._axios.post(url, formData, {
-    //   headers: {
-    //     "content-type": "multipart/form-data",
-    //   },
-    //   timeout: 3600000,
-    //   ...options,
-    // });
   }
 
   /**
@@ -201,18 +175,13 @@ class HttpClient {
    * @param {object} params 请求参数
    * @param {boolean} serialize 是否使用qs.stringify序列化
    */
-  put(url, params, config = null, serialize = true) {
+  put(url, params, options = null, serialize = true) {
     return this.request({
       url,
       method: "put",
       data: serialize ? qs.stringify(params) : params,
-      ...config,
+      ...options,
     });
-    // return this._axios.put(
-    //   url,
-    //   serialize ? qs.stringify(params) : params,
-    //   config
-    // );
   }
 
   /**
@@ -233,26 +202,19 @@ class HttpClient {
       data: params,
       ...options,
     });
-    // return this._axios.put(url, params, {
-    //   headers: {
-    //     "content-type": "application/json;charset=UTF-8",
-    //   },
-    //   ...options,
-    // });
   }
 
   /**
    * delete 请求
    * @param {string} url 请求地址，不含域名
-   * @param {object} config 配置
+   * @param {object} options 配置
    */
-  del(url, config = null) {
+  del(url, options = null) {
     return this.request({
       url,
       method: "delete",
-      ...config,
+      ...options,
     });
-    // return this._axios.delete(url, config);
   }
 
   static createInstance(options) {
